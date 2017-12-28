@@ -1,0 +1,17 @@
+{
+  "manifest_version": 2,
+
+  "name": "Foolproof Bookmarks",
+  "description": "This extension allows the user to bookmark a webpage with an extension.",
+  "version": "0.1",
+  "background": {
+    "page": "background.html"
+  },
+  "browser_action": {
+    "default_icon": "glowing-man.png"
+  },
+  "permissions": [
+    "activeTab"
+  ]
+}
+

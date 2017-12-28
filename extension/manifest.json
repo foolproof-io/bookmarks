@@ -11,7 +11,14 @@
     "default_icon": "glowing-man.png"
   },
   "permissions": [
-    "activeTab"
-  ]
+    "activeTab",
+    "identity"
+  ],
+  "oauth2": {
+    "client_id": "163096248652-e0joed62i9ub72fhil1eokv4oiv1t26n.apps.googleusercontent.com",
+    "scopes": [
+      "https://www.googleapis.com/auth/userinfo.profile"
+    ]
+  }
 }
 

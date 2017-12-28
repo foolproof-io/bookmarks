@@ -1,9 +1,8 @@
 {
   "manifest_version": 2,
-
   "name": "Foolproof Bookmarks",
   "description": "This extension allows the user to bookmark a webpage with an extension.",
-  "version": "0.1",
+  "version": "0.2",
   "background": {
     "page": "background.html"
   },
@@ -15,10 +14,11 @@
     "identity"
   ],
   "oauth2": {
-    "client_id": "163096248652-e0joed62i9ub72fhil1eokv4oiv1t26n.apps.googleusercontent.com",
+    "client_id": "518485674389-l4851idlj7f3s3dk0a2qcn9b8ulh1khq.apps.googleusercontent.com",
     "scopes": [
       "https://www.googleapis.com/auth/userinfo.profile"
     ]
-  }
+  },
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAlQ+lRj6VQk/L2utlEgS62C+QZB5fX1D49zoT5uEgtFVBmTCAYHmzEdepdsmbTuEfdxw+2qFiEpWUmJQFFnaAxqDKHgcOID6gjG/OsN1bKbRVU8JI+kYQXd+e5UWIQr6uHCZPKN+KzvIMoHeWwi5saY6DvM4tRAmGEzdoddGF0v3Z7SqIfipGrgyae68hNhgS/rMaywGa36JTG4yzCERXB8aH286DfWrRAsrgz43475tbUXhyyrWdqiAFV7tFE2wH2gWqtcaR2q754rRiBti337Rbw9Uq4cQ1RmlKaUbCjIJG9mgWdEKIGOiHX/rlcXmBA7a4HyI6a0DqiSp0+dnTWQIDAQAB"
 }
 

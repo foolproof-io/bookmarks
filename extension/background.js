@@ -8,7 +8,22 @@ var config = {
 };
 firebase.initializeApp(config);
 
+firebase.auth().onAuthStateChanged(user => {
+  if (user) {
+    internUser(user);
+  }
+});
+
 chrome.browserAction.onClicked.addListener(internKeep);
+
+function internUser(user) {
+  console.log(user);
+  firebase.firestore().collection("users").doc(user.uid).set({
+    displayName: user.displayName,
+    email: user.email,
+    photoURL: user.photoURL
+  }, {merge:true});
+}
 
 function internKeep(tab) {
   if (!firebase.auth().currentUser) {

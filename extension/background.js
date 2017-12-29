@@ -15,6 +15,10 @@ firebase.auth().onAuthStateChanged(user => {
 });
 
 chrome.browserAction.onClicked.addListener(internKeep);
+chrome.runtime.onMessage.addListener(msg => {
+  console.log("received message:", msg);
+});
+
 
 function internUser(user) {
   console.log(user);
@@ -34,6 +38,21 @@ function internKeep(tab) {
     title: tab.title,
     keptBy: firebase.auth().currentUser.uid,
     keptAt: firebase.firestore.FieldValue.serverTimestamp()
+  }).then(doc => {
+    console.log("just interned " + doc.id);
+    return new Promise((resolve, reject) => {
+      chrome.tabs.executeScript({ code: "document.body.innerText" }, results => {
+        resolve({ keepId: doc.id, text: results[0] });
+      });
+    });
+  }).then(result => {
+    return firebase.storage()
+      .ref([
+        "page-text",
+        firebase.auth().currentUser.uid,
+        result.keepId
+      ].join("/"))
+      .putString(result.text);
   });
 }
 
